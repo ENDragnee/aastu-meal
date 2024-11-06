@@ -116,10 +116,14 @@ Node.js and npm are required to run a Next.js project.
 ## Additional Commands
 
 - **Run the app quickly using the run.sh. It is located in the root(@/) folder.**
-   ```bash
-   chmod + ./run.sh
-   ./run.sh
-   ```
+   - *Make the script executable*
+      ```bash
+      chmod + ./run.sh
+      ```
+   - *Run the script*
+      ```bash
+      ./run.sh
+      ```
 
 - **Build the app for production**:
 
