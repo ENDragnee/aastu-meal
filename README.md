@@ -16,6 +16,20 @@ If Git is not installed, you can install it with the following commands:
 - **Ubuntu**: `sudo apt update && sudo apt install git`
 - **Arch**: `sudo pacman -Syu && sudo pacman -S git`
 
+Make sure you have mariadb or mysql installed.
+- **Ubuntu**:
+```bash
+sudo apt install mariadb-server mariadb-client  mysql-workbench-community
+```
+
+- **Arch**:
+```bash
+sudo pacman -S mariadb mysql-workbench
+```
+## Import the database
+
+Open workbench and import the struct from @/sql/aastuMeal
+
 ## Setting Up Node.js and npm
 
 Node.js and npm are required to run a Next.js project.
@@ -103,6 +117,7 @@ Node.js and npm are required to run a Next.js project.
 4. **Access the application**:
 
    Open your browser and go to [http://localhost:3000](http://localhost:3000) to see your Next.js app.
+   If you are in a local network then [http://the-host-ip:3000](http://the-host-ip:3000), it is usually 192.168.x.x for wifi and 127.0.x.x for ethernet. To see your Next.js app.
 
 ## Additional Commands
 
