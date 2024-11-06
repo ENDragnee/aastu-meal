@@ -50,7 +50,7 @@ export default function StudentVerificationComponent() {
       const data = await response.json()
       setRecentEntries(data.entries.map(entry => ({
         id: entry.scan,
-        timestamp: new Date(entry.date)
+        timestamp: new Date(entry.create_time)
       })))
     } catch (error) {
       console.error('Error fetching recent entries:', error)
