@@ -96,16 +96,10 @@ Node.js and npm are required to run a Next.js project.
 
 2. **Initialize a Next.js project**:
 
-   Use `npx` to create a new Next.js app. Replace `my-next-app` with your desired project name.
+   Use `npm` to initialize the Next.js app.
 
    ```bash
-   npx create-next-app@latest my-next-app
-   ```
-
-   Follow the prompts to set up the project. After setup, navigate into the project directory:
-
-   ```bash
-   cd my-next-app
+   npm install
    ```
 
 3. **Start the development server**:
