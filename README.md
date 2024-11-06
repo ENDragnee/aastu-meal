@@ -1,36 +1,142 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# Project Setup Guide
 
-First, run the development server:
+This guide provides instructions to set up Node.js and npm on Linux (Ubuntu and Arch) and initialize a Next.js project.
+
+## Prerequisites
+
+Make sure you have Git installed. To check if Git is installed, run:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git --version
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+If Git is not installed, you can install it with the following commands:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Ubuntu**: `sudo apt update && sudo apt install git`
+- **Arch**: `sudo pacman -Syu && sudo pacman -S git`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Setting Up Node.js and npm
 
-## Learn More
+Node.js and npm are required to run a Next.js project.
 
-To learn more about Next.js, take a look at the following resources:
+### Ubuntu
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Update the package list**:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   ```bash
+   sudo apt update
+   ```
 
-## Deploy on Vercel
+2. **Install Node.js and npm**:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   Ubuntu’s repositories may not have the latest version. We recommend installing via `nvm` (Node Version Manager) to manage different versions easily.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   **Install nvm**:
+
+   ```bash
+   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+   ```
+
+   **Load nvm**:
+
+   ```bash
+   source ~/.bashrc
+   ```
+
+   **Install Node.js (LTS)**:
+
+   ```bash
+   nvm install --lts
+   ```
+
+   **Verify the installation**:
+
+   ```bash
+   node -v
+   npm -v
+   ```
+
+### Arch Linux
+
+1. **Install Node.js and npm** directly from the official repositories:
+
+   ```bash
+   sudo pacman -Syu nodejs npm
+   ```
+
+2. **Verify the installation**:
+
+   ```bash
+   node -v
+   npm -v
+   ```
+
+## Setting Up a Next.js Project
+
+1. **Navigate to the desired project directory**:
+
+   ```bash
+   cd /path/to/your/project-directory
+   ```
+
+2. **Initialize a Next.js project**:
+
+   Use `npx` to create a new Next.js app. Replace `my-next-app` with your desired project name.
+
+   ```bash
+   npx create-next-app@latest my-next-app
+   ```
+
+   Follow the prompts to set up the project. After setup, navigate into the project directory:
+
+   ```bash
+   cd my-next-app
+   ```
+
+3. **Start the development server**:
+
+   ```bash
+   npm run dev
+   ```
+
+4. **Access the application**:
+
+   Open your browser and go to [http://localhost:3000](http://localhost:3000) to see your Next.js app.
+
+## Additional Commands
+
+- **Build the app for production**:
+
+  ```bash
+  npm run build
+  ```
+
+- **Start the production server**:
+
+  ```bash
+  npm start
+  ```
+
+- **Lint the code**:
+
+  ```bash
+  npm run lint
+  ```
+
+## Troubleshooting
+
+- If you encounter issues with permissions or the `nvm` command, ensure that `nvm` is correctly sourced in your `.bashrc` or `.zshrc` file. You can add the following to your profile file:
+
+  ```bash
+  export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+  ```
+
+## Contributing
+
+Please follow the project's contribution guidelines for any code changes or updates to documentation.
+
+---
+
+Enjoy building with Next.js on Linux!
